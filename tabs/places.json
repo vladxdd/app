@@ -1,0 +1,170 @@
+[
+  {
+    "name": "Sofia",
+    "coordinates": {
+      "latitude": 42.6975,
+      "longitude": 23.3241
+    },
+    "country": "Bulgaria"
+  },
+  {
+    "name": "Plovdiv",
+    "coordinates": {
+      "latitude": 42.1354,
+      "longitude": 24.7453
+    },
+    "country": "Bulgaria"
+  },
+  {
+    "name": "Varna",
+    "coordinates": {
+      "latitude": 43.2165,
+      "longitude": 27.9010
+    },
+    "country": "Bulgaria"
+  },
+  {
+    "name": "Veliko Tarnovo",
+    "coordinates": {
+      "latitude": 43.0828,
+      "longitude": 25.6322
+    },
+    "country": "Bulgaria"
+  },
+  {
+    "name": "Burgas",
+    "coordinates": {
+      "latitude": 42.5048,
+      "longitude": 27.4626
+    },
+    "country": "Bulgaria"
+  },
+  {
+    "name": "Budapest",
+    "coordinates": {
+      "latitude": 47.4979,
+      "longitude": 19.0402
+    },
+    "country": "Hungary"
+  },
+  {
+    "name": "Debrecen",
+    "coordinates": {
+      "latitude": 47.5316,
+      "longitude": 21.6273
+    },
+    "country": "Hungary"
+  },
+  {
+    "name": "Szeged",
+    "coordinates": {
+      "latitude": 46.2530,
+      "longitude": 20.1465
+    },
+    "country": "Hungary"
+  },
+  {
+    "name": "Miskolc",
+    "coordinates": {
+      "latitude": 48.1044,
+      "longitude": 20.7784
+    },
+    "country": "Hungary"
+  },
+  {
+    "name": "Eger",
+    "coordinates": {
+      "latitude": 47.9025,
+      "longitude": 20.3737
+    },
+    "country": "Hungary"
+  },
+  {
+    "name": "Vienna",
+    "coordinates": {
+      "latitude": 48.2082,
+      "longitude": 16.3738
+    },
+    "country": "Austria"
+  },
+  {
+    "name": "Salzburg",
+    "coordinates": {
+      "latitude": 47.8095,
+      "longitude": 13.0550
+    },
+    "country": "Austria"
+  },
+  {
+    "name": "Innsbruck",
+    "coordinates": {
+      "latitude": 47.2692,
+      "longitude": 11.4041
+    },
+    "country": "Austria"
+  },
+  {
+    "name": "Graz",
+    "coordinates": {
+      "latitude": 47.0707,
+      "longitude": 15.4395
+    },
+    "country": "Austria"
+  },
+  {
+    "name": "Linz",
+    "coordinates": {
+      "latitude": 48.3069,
+      "longitude": 14.2858
+    },
+    "country": "Austria"
+  },
+  {
+    "name": "Prague",
+    "coordinates": {
+      "latitude": 50.0755,
+      "longitude": 14.4378
+    },
+    "country": "Czech Republic"
+  },
+  {
+    "name": "Cesky Krumlov",
+    "coordinates": {
+      "latitude": 48.8127,
+      "longitude": 14.3175
+    },
+    "country": "Czech Republic"
+  },
+  {
+    "name": "Karlovy Vary",
+    "coordinates": {
+      "latitude": 50.2329,
+      "longitude": 12.8710
+    },
+    "country": "Czech Republic"
+  },
+  {
+    "name": "Brno",
+    "coordinates": {
+      "latitude": 49.1951,
+      "longitude": 16.6068
+    },
+    "country": "Czech Republic"
+  },
+  {
+    "name": "Olomouc",
+    "coordinates": {
+      "latitude": 49.5957,
+      "longitude": 17.2510
+    },
+    "country": "Czech Republic"
+  },
+  {
+    "name": "Warsaw",
+    "coordinates": {
+      "latitude": 52.2297,
+      "longitude": 21.0122
+    },
+    "country": "Poland"
+  }
+]

@@ -29,7 +29,7 @@ export default function App() {
           options={{
             tabBarIcon: () => (
               <Image
-                source={{ uri: 'https://toppng.com//public/uploads/preview/royalty-free-stock-maps-icon-free-download-png-white-google-map-ico-115629001883xm3bupqk9.png' }}
+                source={{ uri: 'https://www.seekpng.com/png/detail/799-7998693_open-map-icon.png' }}
                 style={{ width: 24, height: 24 }}
               />
             ),
