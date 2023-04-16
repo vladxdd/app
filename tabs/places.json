@@ -1,170 +1,202 @@
 [
   {
-    "name": "Sofia",
+    "name": "Chisinau",
     "coordinates": {
-      "latitude": 42.6975,
-      "longitude": 23.3241
+      "latitude": 47.0105,
+      "longitude": 28.8638
     },
-    "country": "Bulgaria"
+    "country": "Moldova"
   },
   {
-    "name": "Plovdiv",
+    "name": "Orheiul Vechi",
     "coordinates": {
-      "latitude": 42.1354,
-      "longitude": 24.7453
+      "latitude": 47.3733,
+      "longitude": 28.8228
     },
-    "country": "Bulgaria"
+    "country": "Moldova"
   },
   {
-    "name": "Varna",
+    "name": "Cricova Winery",
     "coordinates": {
-      "latitude": 43.2165,
-      "longitude": 27.9010
+      "latitude": 47.1469,
+      "longitude": 28.8617
     },
-    "country": "Bulgaria"
+    "country": "Moldova"
   },
   {
-    "name": "Veliko Tarnovo",
+    "name": "Soroca Fortress",
     "coordinates": {
-      "latitude": 43.0828,
-      "longitude": 25.6322
+      "latitude": 48.1596,
+      "longitude": 28.3019
     },
-    "country": "Bulgaria"
+    "country": "Moldova"
   },
   {
-    "name": "Burgas",
+    "name": "Tipova Monastery",
     "coordinates": {
-      "latitude": 42.5048,
-      "longitude": 27.4626
+      "latitude": 47.8554,
+      "longitude": 29.0754
     },
-    "country": "Bulgaria"
+    "country": "Moldova"
   },
   {
-    "name": "Budapest",
+    "name": "Bucharest",
     "coordinates": {
-      "latitude": 47.4979,
-      "longitude": 19.0402
+      "latitude": 44.4268,
+      "longitude": 26.1025
     },
-    "country": "Hungary"
+    "country": "Romania"
   },
   {
-    "name": "Debrecen",
+    "name": "Brasov",
     "coordinates": {
-      "latitude": 47.5316,
-      "longitude": 21.6273
+      "latitude": 45.6557,
+      "longitude": 25.6108
     },
-    "country": "Hungary"
+    "country": "Romania"
   },
   {
-    "name": "Szeged",
+    "name": "Cluj-Napoca",
     "coordinates": {
-      "latitude": 46.2530,
-      "longitude": 20.1465
+      "latitude": 46.7712,
+      "longitude": 23.6236
     },
-    "country": "Hungary"
+    "country": "Romania"
   },
   {
-    "name": "Miskolc",
+    "name": "Sibiu",
     "coordinates": {
-      "latitude": 48.1044,
-      "longitude": 20.7784
+      "latitude": 45.7989,
+      "longitude": 24.1256
     },
-    "country": "Hungary"
+    "country": "Romania"
   },
   {
-    "name": "Eger",
+    "name": "Timisoara",
     "coordinates": {
-      "latitude": 47.9025,
-      "longitude": 20.3737
+      "latitude": 45.7489,
+      "longitude": 21.2087
     },
-    "country": "Hungary"
+    "country": "Romania"
   },
   {
-    "name": "Vienna",
+    "name": "Belgrade",
     "coordinates": {
-      "latitude": 48.2082,
-      "longitude": 16.3738
+      "latitude": 44.7872,
+      "longitude": 20.4573
     },
-    "country": "Austria"
+    "country": "Serbia"
   },
   {
-    "name": "Salzburg",
+    "name": "Novi Sad",
     "coordinates": {
-      "latitude": 47.8095,
-      "longitude": 13.0550
+      "latitude": 45.2671,
+      "longitude": 19.8335
     },
-    "country": "Austria"
+    "country": "Serbia"
   },
   {
-    "name": "Innsbruck",
+    "name": "Nis",
     "coordinates": {
-      "latitude": 47.2692,
-      "longitude": 11.4041
+      "latitude": 43.3194,
+      "longitude": 21.8963
     },
-    "country": "Austria"
+    "country": "Serbia"
   },
   {
-    "name": "Graz",
+    "name": "Subotica",
     "coordinates": {
-      "latitude": 47.0707,
-      "longitude": 15.4395
+      "latitude": 46.1018,
+      "longitude": 19.6659
     },
-    "country": "Austria"
+    "country": "Serbia"
   },
   {
-    "name": "Linz",
+    "name": "Kragujevac",
     "coordinates": {
-      "latitude": 48.3069,
-      "longitude": 14.2858
+      "latitude": 44.0128,
+      "longitude": 20.9267
     },
-    "country": "Austria"
+    "country": "Serbia"
   },
   {
-    "name": "Prague",
+    "name": "Zagreb",
     "coordinates": {
-      "latitude": 50.0755,
-      "longitude": 14.4378
+      "latitude": 45.8150,
+      "longitude": 15.9819
     },
-    "country": "Czech Republic"
+    "country": "Croatia"
   },
   {
-    "name": "Cesky Krumlov",
+    "name": "Dubrovnik",
     "coordinates": {
-      "latitude": 48.8127,
-      "longitude": 14.3175
+      "latitude": 42.6507,
+      "longitude": 18.0944
     },
-    "country": "Czech Republic"
+    "country": "Croatia"
   },
   {
-    "name": "Karlovy Vary",
+    "name": "Split",
     "coordinates": {
-      "latitude": 50.2329,
-      "longitude": 12.8710
+      "latitude": 43.5081,
+      "longitude": 16.4402
     },
-    "country": "Czech Republic"
+    "country": "Croatia"
   },
   {
-    "name": "Brno",
+    "name": "Zadar",
     "coordinates": {
-      "latitude": 49.1951,
-      "longitude": 16.6068
+      "latitude": 44.1194,
+      "longitude": 15.2422
     },
-    "country": "Czech Republic"
+    "country": "Croatia"
   },
   {
-    "name": "Olomouc",
+    "name": "Rovinj",
     "coordinates": {
-      "latitude": 49.5957,
-      "longitude": 17.2510
+      "latitude": 45.0805,
+      "longitude": 13.6405
     },
-    "country": "Czech Republic"
+    "country": "Croatia"
   },
   {
-    "name": "Warsaw",
+    "name": "Budva",
     "coordinates": {
-      "latitude": 52.2297,
-      "longitude": 21.0122
+      "latitude": 42.2884,
+      "longitude": 18.8428
     },
-    "country": "Poland"
+    "country": "Montenegro"
+  },
+  {
+    "name": "Kotor",
+    "coordinates": {
+      "latitude": 42.4247,
+      "longitude": 18.7712
+    },
+    "country": "Montenegro"
+  },
+  {
+    "name": "Podgorica",
+    "coordinates": {
+      "latitude": 42.4304,
+      "longitude": 19.2594
+    },
+    "country": "Montenegro"
+  },
+  {
+    "name": "Ulcinj",
+    "coordinates": {
+      "latitude": 41.9317,
+      "longitude": 19.2245
+    },
+    "country": "Montenegro"
+  },
+  {
+    "name": "Herceg Novi",
+    "coordinates": {
+      "latitude": 42.4531,
+      "longitude": 18.5272
+    },
+    "country": "Montenegro"
   }
 ]

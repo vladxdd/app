@@ -1,5 +1,5 @@
 import React, { useState, useEffect, useRef } from 'react';
-import { StyleSheet, Text, View, TouchableOpacity } from 'react-native';
+import { StyleSheet, Text, View, TouchableOpacity, ScrollView } from 'react-native'; //import ScrollView component
 import MapView, { Marker } from 'react-native-maps';
 import * as Location from 'expo-location';
 import places from './places.json'; //import JSON containing places and coordinates
@@ -10,6 +10,11 @@ export default function Map() {
   const [selectedPlace, setSelectedPlace] = useState(null); //state to store the selected place
   const mapRef = useRef(null); // reference to the map component
   const [selectedCountry, setSelectedCountry] = useState('all'); //state to store the selected country
+  const countries = Array.from(new Set(places.map((place) => place.country.toLowerCase()))); //get unique list of countries from the places array
+  const [searchText, setSearchText] = useState("");
+  const handleTextChange = (text) => {
+    setSearchText(text);
+  };
 
   useEffect(() => {
     (async () => {
@@ -23,6 +28,17 @@ export default function Map() {
       setLocation(location);
     })();
   }, []);
+
+  const handleSearch = () => {
+    const filteredPlaces = places.filter(place => {
+      const searchTextLC = searchText.toLowerCase();
+      const nameLC = place.name.toLowerCase();
+      const addressLC = place.address.toLowerCase();
+      return nameLC.includes(searchTextLC) || addressLC.includes(searchTextLC);
+    });
+    console.log(filteredPlaces); // log the filtered places to console
+    // your code to do something with the filtered places
+  };
 
   const handleMarkerPress = (place) => {
     if (place.name === selectedPlace) {
@@ -44,26 +60,27 @@ export default function Map() {
 
   return (
     <View style={styles.container}>
-      <View style={styles.switchContainer}>
-        <TouchableOpacity style={[styles.switchButton, selectedCountry === 'all' && styles.selectedSwitchButton]} onPress={() => handleSwitchCountry('all')}>
-          <Text style={[styles.switchButtonText, selectedCountry === 'all' && styles.selectedSwitchButtonText]}>All</Text>
-        </TouchableOpacity>
-        <TouchableOpacity style={[styles.switchButton, selectedCountry === 'usa' && styles.selectedSwitchButton]} onPress={() => handleSwitchCountry('usa')}>
-          <Text style={[styles.switchButtonText, selectedCountry === 'usa' && styles.selectedSwitchButtonText]}>USA</Text>
-        </TouchableOpacity>
-        <TouchableOpacity style={[styles.switchButton, selectedCountry === 'canada' && styles.selectedSwitchButton]} onPress={() => handleSwitchCountry('canada')}>
-          <Text style={[styles.switchButtonText, selectedCountry === 'canada' && styles.selectedSwitchButtonText]}>Canada</Text>
-        </TouchableOpacity>
-        <TouchableOpacity style={[styles.switchButton, selectedCountry === 'moldova' && styles.selectedSwitchButton]} onPress={() => handleSwitchCountry('moldova')}>
-          <Text style={[styles.switchButtonText, selectedCountry === 'moldova' && styles.selectedSwitchButtonText]}>Moldova</Text>
-        </TouchableOpacity>
-        <TouchableOpacity style={[styles.switchButton, selectedCountry === 'bulgaria' && styles.selectedSwitchButton]} onPress={() => handleSwitchCountry('bulgaria')}>
-          <Text style={[styles.switchButtonText, selectedCountry === 'bulgaria' && styles.selectedSwitchButtonText]}>Bulgaria</Text>
-        </TouchableOpacity>
-      </View>
+      <ScrollView horizontal={true}> 
+        <View style={styles.switchContainer}>
+          {countries.map((country) => (
+            <TouchableOpacity
+              key={country}
+              style={[
+                styles.switchButton,
+                selectedCountry === country && styles.selectedSwitchButton,
+              ]}
+              onPress={() => handleSwitchCountry(country)}
+            >
+              <Text style={[styles.switchButtonText, selectedCountry === country && styles.selectedSwitchButtonText]}>
+                {country}
+              </Text>
+            </TouchableOpacity>
+          ))}
+        </View>
+      </ScrollView>
       {location && (
         <MapView
-          ref={mapRef} // set the reference to the map component
+          ref={mapRef} 
           style={styles.map}
           initialRegion={{
             latitude: location.coords.latitude,
@@ -71,69 +88,120 @@ export default function Map() {
             latitudeDelta: 0.0922,
             longitudeDelta: 0.0421,
           }}
-          onRegionChange={() => setSelectedPlace(null)} // deselect the selected place on map move
+          onRegionChange={() => setSelectedPlace(null)} 
         >
-          {places.filter(place => selectedCountry === 'all' || place.country.toLowerCase() === selectedCountry).map((place, index) => ( //map over the places and coordinates in the JSON, filter by selected country
-            <Marker
-              key={index}
-              coordinate={{ latitude: place.coordinates.latitude, longitude: place.coordinates.longitude }}
-              pinColor={place.country === 'moldova' ? 'green' : 'blue'} //set marker color to blue, except for Moldova, which is green
-              onPress={() => handleMarkerPress(place)}
-            >
-              {selectedPlace === place.name && (
-                <View style={styles.markerContainer}>
-                  <Text style={styles.markerText}>{place.name}</Text>
-                </View>
-              )}
-            </Marker>
-          ))}
+          {places
+            .filter((place) => selectedCountry === 'all' || place.country.toLowerCase() === selectedCountry)
+            .map((place, index) => ( 
+              <Marker
+                key={index}
+                coordinate={{ latitude: place.coordinates.latitude, longitude: place.coordinates.longitude }}
+                pinColor={place.country === 'moldova' ? 'green' : 'blue'}
+                onPress={() => handleMarkerPress(place)}
+              >
+                {selectedPlace === place.name && (
+                  <View style={styles.markerContainer}>
+                    <Text style={styles.markerText}>{place.name}</Text>
+                  </View>
+                )}
+              </Marker>
+            ))}
           <Marker coordinate={{ latitude: location.coords.latitude, longitude: location.coords.longitude }} />
         </MapView>
       )}
     </View>
+
   );
 }
 
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
-  map: {
-    width: '100%',
-    height: '90%',
-  },
-  markerContainer: {
-    backgroundColor: '#fff',
-    borderRadius: 5,
-    padding: 5,
-  },
-  markerText: {
-    fontWeight: 'bold',
   },
   switchContainer: {
     flexDirection: 'row',
     justifyContent: 'center',
     alignItems: 'center',
-    marginBottom: 10,
+    backgroundColor: '#fff',
+    borderBottomWidth: 1,
+    borderBottomColor: '#ccc',
+    paddingVertical: 10,
   },
   switchButton: {
-    backgroundColor: '#f5f5f5',
-    borderRadius: 5,
+    paddingHorizontal: 20,
     paddingVertical: 5,
-    paddingHorizontal: 10,
+    borderRadius: 15,
     marginHorizontal: 5,
   },
   selectedSwitchButton: {
-    backgroundColor: '#2196F3',
+    backgroundColor: '#3f51b5',
   },
   switchButtonText: {
-    fontWeight: 'bold',
-    color: '#333',
+    color: '#3f51b5',
   },
   selectedSwitchButtonText: {
     color: '#fff',
+  },
+  map: {
+    width : '100%',
+    height : '92.5%',
+  },
+  markerContainer: {
+    backgroundColor: '#fff',
+    borderRadius: 5,
+    paddingVertical: 5,
+    paddingHorizontal: 10,
+    borderColor: '#ccc',
+    borderWidth: 1,
+  },
+  markerText: {
+    fontSize: 16,
+  },
+  inputContainer: {
+    paddingHorizontal: 20,
+    paddingTop: 10,
+    backgroundColor: '#fff',
+    borderBottomWidth: 1,
+    borderBottomColor: '#ccc',
+  },
+  textInput: {
+    height: 40,
+    borderBottomColor: '#ccc',
+    borderBottomWidth: 1,
+    marginBottom: 10,
+  },
+  radioInputs: {
+    flexDirection: 'column',
+    alignItems: 'flex-start',
+    marginVertical: 10,
+  },
+  radio: {
+    flexDirection: 'row',
+    alignItems: 'center',
+    marginVertical: 5,
+  },
+  radioInput: {
+    flexDirection: 'row',
+    alignItems: 'center',
+  },
+  radioCircle: {
+    width: 20,
+    height: 20,
+    borderRadius: 10,
+    borderWidth: 2,
+    borderColor: '#bbb',
+    justifyContent: 'center',
+    alignItems: 'center',
+    marginRight: 10,
+  },
+  selectedRadioCircle: {
+    width: 10,
+    height: 10,
+    borderRadius: 5,
+    backgroundColor: '#bbb',
+  },
+  radioText: {
+    fontSize: 16,
+    color: '#333',
   },
 });
