@@ -44,7 +44,6 @@ export default function Map() {
     if (place.name === selectedPlace) {
       setSelectedPlace(null); // deselect the selected place if the same marker is clicked again
     } else {
-      setSelectedPlace(place.name); // set the selected place to show its name on top of the map
       mapRef.current.animateToRegion({
         latitude: place.coordinates.latitude,
         longitude: place.coordinates.longitude,
