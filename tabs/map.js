@@ -1,8 +1,8 @@
 import React, { useState, useEffect, useRef } from 'react';
-import { StyleSheet, Text, View, TouchableOpacity, ScrollView } from 'react-native'; //import ScrollView component
+import { StyleSheet, Text, View, TouchableOpacity, ScrollView } from 'react-native'; 
 import MapView, { Marker } from 'react-native-maps';
 import * as Location from 'expo-location';
-import places from './places.json'; //import JSON containing places and coordinates
+import places from './places.json'; 
 
 export default function Map() {
   const [location, setLocation] = useState(null);
@@ -47,8 +47,8 @@ export default function Map() {
       mapRef.current.animateToRegion({
         latitude: place.coordinates.latitude,
         longitude: place.coordinates.longitude,
-        latitudeDelta: 0.0922,
-        longitudeDelta: 0.0421,
+        latitudeDelta: 0.0082,
+        longitudeDelta: 0.0081,
       }, 1000); // move the map to center on the selected marker's location
     }
   };
@@ -156,6 +156,7 @@ const styles = StyleSheet.create({
   markerText: {
     fontSize: 16,
   },
+  // no ussage
   inputContainer: {
     paddingHorizontal: 20,
     paddingTop: 10,
@@ -163,12 +164,14 @@ const styles = StyleSheet.create({
     borderBottomWidth: 1,
     borderBottomColor: '#ccc',
   },
+  //  no ussage
   textInput: {
     height: 40,
     borderBottomColor: '#ccc',
     borderBottomWidth: 1,
     marginBottom: 10,
   },
+  //  no ussage
   radioInputs: {
     flexDirection: 'column',
     alignItems: 'flex-start',
@@ -183,6 +186,7 @@ const styles = StyleSheet.create({
     flexDirection: 'row',
     alignItems: 'center',
   },
+  //  no ussage
   radioCircle: {
     width: 20,
     height: 20,
@@ -193,12 +197,14 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     marginRight: 10,
   },
+  //  no ussage
   selectedRadioCircle: {
     width: 10,
     height: 10,
     borderRadius: 5,
     backgroundColor: '#bbb',
   },
+  //  also no ussage
   radioText: {
     fontSize: 16,
     color: '#333',

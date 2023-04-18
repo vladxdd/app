@@ -198,5 +198,85 @@
       "longitude": 18.5272
     },
     "country": "Montenegro"
+  },
+  {
+    "name": "Hagia Sophia",
+    "coordinates": {
+      "latitude": 41.0086,
+      "longitude": 28.9802
+    },
+    "country": "Turkey"
+  },
+  {
+    "name": "Topkapi Palace",
+    "coordinates": {
+      "latitude": 41.0119,
+      "longitude": 28.9833
+    },
+    "country": "Turkey"
+  },
+  {
+    "name": "Blue Mosque",
+    "coordinates": {
+      "latitude": 41.0054,
+      "longitude": 28.9764
+    },
+    "country": "Turkey"
+  },
+  {
+    "name": "Grand Bazaar",
+    "coordinates": {
+      "latitude": 41.0107,
+      "longitude": 28.9685
+    },
+    "country": "Turkey"
+  },
+  {
+    "name": "Basilica Cistern",
+    "coordinates": {
+      "latitude": 41.0084,
+      "longitude": 28.9774
+    },
+    "country": "Turkey"
+  },
+  {
+    "name": "Spice Bazaar",
+    "coordinates": {
+      "latitude": 41.0178,
+      "longitude": 28.9647
+    },
+    "country": "Turkey"
+  },
+  {
+    "name": "Galata Tower",
+    "coordinates": {
+      "latitude": 41.0256,
+      "longitude": 28.9742
+    },
+    "country": "Turkey"
+  },
+  {
+    "name": "Dolmabahce Palace",
+    "coordinates": {
+      "latitude": 41.0392,
+      "longitude": 29.0029
+    },
+    "country": "Turkey"
+  },
+  {
+    "name": "Taksim Square",
+    "coordinates": {
+      "latitude": 41.0368,
+      "longitude": 28.9868
+    },
+    "country": "Turkey"
+  },
+  {
+    "name": "Chora Church",
+    "coordinates": {
+      "latitude": 41.0222,
+      "longitude": 28.9428
+    },
+    "country": "Turkey"
   }
 ]
