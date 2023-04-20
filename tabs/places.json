@@ -5,7 +5,8 @@
       "latitude": 47.0105,
       "longitude": 28.8638
     },
-    "country": "Moldova"
+    "country": "Moldova",
+    "description": "Chisinau is the capital city of Moldova, known for its parks, museums, and vibrant nightlife. Visitors can explore the historic landmarks, such as the Nativity Cathedral, the Triumphal Arch, and the Presidential Palace. The city also has a variety of markets, restaurants, and cafes, offering traditional Moldovan cuisine and wine."
   },
   {
     "name": "Orheiul Vechi",
@@ -13,7 +14,8 @@
       "latitude": 47.3733,
       "longitude": 28.8228
     },
-    "country": "Moldova"
+    "country": "Moldova",
+    "description": "Orheiul Vechi is an open-air museum and archaeological site, located on the Raut River. Visitors can explore the cave monasteries, the ruins of the medieval fortress, and the traditional Moldovan village. The site offers stunning views of the surrounding landscape and is a great destination for nature lovers and history enthusiasts."
   },
   {
     "name": "Cricova Winery",
@@ -21,7 +23,8 @@
       "latitude": 47.1469,
       "longitude": 28.8617
     },
-    "country": "Moldova"
+    "country": "Moldova",
+    "description": "Cricova Winery is one of the largest wine cellars in the world, with over 120 kilometers of underground tunnels. Visitors can take a guided tour of the cellar, taste a variety of wines and learn about the history of winemaking in Moldova. The winery also hosts festivals and events throughout the year."
   },
   {
     "name": "Soroca Fortress",
@@ -29,7 +32,8 @@
       "latitude": 48.1596,
       "longitude": 28.3019
     },
-    "country": "Moldova"
+    "country": "Moldova",
+    "description": "Soroca Fortress is a medieval fortress, located on the banks of the Dniester River. The fortress was built in the 16th century and has since been restored and preserved as a cultural monument. Visitors can explore the fortress walls, towers, and gates, and learn about the history of the region."
   },
   {
     "name": "Tipova Monastery",
@@ -37,7 +41,8 @@
       "latitude": 47.8554,
       "longitude": 29.0754
     },
-    "country": "Moldova"
+    "country": "Moldova",
+    "description": "Tipova Monastery is a complex of cave monasteries, located on the banks of the Dniester River. The monastery was founded in the 10th century and has since been expanded and restored. Visitors can explore the caves, chapels, and frescoes, and learn about the history of Orthodox Christianity in Moldova."
   },
   {
     "name": "Bucharest",
@@ -45,7 +50,8 @@
       "latitude": 44.4268,
       "longitude": 26.1025
     },
-    "country": "Romania"
+    "country": "Romania",
+    "description": "Bucharest is the capital city of Romania, known for its elegant architecture, parks, and museums. Visitors can explore the historic landmarks, such as the Palace of the Parliament, the Arcul de Triumf, and the Romanian Athenaeum. The city also has a variety of shops, restaurants, and cafes, offering traditional Romanian cuisine and culture."
   },
   {
     "name": "Brasov",
@@ -53,7 +59,8 @@
       "latitude": 45.6557,
       "longitude": 25.6108
     },
-    "country": "Romania"
+    "country": "Romania",
+    "description": "Brasov is a historic city in the Transylvania region, known for its Gothic architecture, medieval walls, and vibrant nightlife. Visitors can explore the Black Church, the Town Hall, and the Council Square. The city also has a variety of ski resorts, hiking trails, and natural parks, offering outdoor activities for all seasons."
   },
   {
     "name": "Cluj-Napoca",
@@ -61,7 +68,8 @@
       "latitude": 46.7712,
       "longitude": 23.6236
     },
-    "country": "Romania"
+    "country": "Romania",
+    "description": "Cluj-Napoca is a vibrant university town, known for its cultural events, museums, and parks. Visitors can explore the National Museum of Art, the Botanical Garden, and the St. Michael's Church. The city also has a variety of bars, cafes, and restaurants, offering traditional Romanian and Hungarian cuisine."
   },
   {
     "name": "Sibiu",
@@ -69,7 +77,8 @@
       "latitude": 45.7989,
       "longitude": 24.1256
     },
-    "country": "Romania"
+    "country": "Romania",
+    "description": "Sibiu is a medieval town, known for its historic landmarks, museums, and festivals. Visitors can explore the Brukenthal National Museum, the Evangelical Cathedral, and the Council Tower. The town also has a variety of shops, restaurants, and cafes, offering traditional Transylvanian cuisine and culture."
   },
   {
     "name": "Timisoara",
@@ -77,7 +86,8 @@
       "latitude": 45.7489,
       "longitude": 21.2087
     },
-    "country": "Romania"
+    "country": "Romania",
+    "description": "Timisoara is a cultural and economic center, known for its parks, museums, and historic landmarks. Visitors can explore the Timisoara Orthodox Cathedral, the Huniade Castle, and the Victory Square. The city also has a variety of shops, restaurants, and cafes, offering traditional Romanian and Serbian cuisine and culture."
   },
   {
     "name": "Belgrade",
@@ -85,7 +95,8 @@
       "latitude": 44.7872,
       "longitude": 20.4573
     },
-    "country": "Serbia"
+    "country": "Serbia",
+    "description": "Belgrade is the capital city of Serbia, known for its history, culture, and nightlife. Visitors can explore the Belgrade Fortress, the Temple of Saint Sava, and the Kalemegdan Park. The city also has a variety of shops, restaurants, and cafes, offering traditional Serbian cuisine and culture."
   },
   {
     "name": "Novi Sad",
@@ -93,7 +104,8 @@
       "latitude": 45.2671,
       "longitude": 19.8335
     },
-    "country": "Serbia"
+    "country": "Serbia",
+    "description": "Novi Sad is a cultural and economic center, known for its museums, parks, and festivals. Visitors can explore the Petrovaradin Fortress, the Danube Park, and the Museum of Vojvodina. The city also has a variety of bars, cafes, and restaurants, offering traditional Serbian and Hungarian cuisine."
   },
   {
     "name": "Nis",
@@ -101,7 +113,8 @@
       "latitude": 43.3194,
       "longitude": 21.8963
     },
-    "country": "Serbia"
+    "country": "Serbia",
+    "description": "Nis is a historic city, known for its landmarks, museums, and festivals. Visitors can explore the Nis Fortress, the Skull Tower, and the National Museum of Nis. The city also has a variety of shops, restaurants, and cafes, offering traditional Serbian cuisine and culture."
   },
   {
     "name": "Subotica",
@@ -109,7 +122,8 @@
       "latitude": 46.1018,
       "longitude": 19.6659
     },
-    "country": "Serbia"
+    "country": "Serbia",
+    "description": "Subotica is a cultural and economic center, known for its Art Nouveau architecture, museums, and festivals. Visitors can explore the Town Hall, the Synagogue, and the City Museum. The city also has a variety of bars, cafes, and restaurants, offering traditional Serbian and Hungarian cuisine."
   },
   {
     "name": "Kragujevac",
@@ -117,7 +131,8 @@
       "latitude": 44.0128,
       "longitude": 20.9267
     },
-    "country": "Serbia"
+    "country": "Serbia",
+    "description": "Kragujevac is a historic city, known for its landmarks, museums, and festivals. Visitors can explore the National Museum of Kragujevac, the Monument to the Victims of the 21st of October, and the Sumarice Memorial Park. The city also has a variety of shops, restaurants, and cafes, offering traditional Serbian cuisine and culture."
   },
   {
     "name": "Zagreb",
@@ -125,7 +140,8 @@
       "latitude": 45.8150,
       "longitude": 15.9819
     },
-    "country": "Croatia"
+    "country": "Croatia",
+    "description": "Zagreb is the capital city of Croatia, known for its historic landmarks, museums, and parks. Visitors can explore the Zagreb Cathedral, the St. Mark's Church, and the Maksimir Park. The city also has a variety of shops, restaurants, and cafes, offering traditional Croatian cuisine and culture."
   },
   {
     "name": "Dubrovnik",
@@ -133,15 +149,35 @@
       "latitude": 42.6507,
       "longitude": 18.0944
     },
-    "country": "Croatia"
+    "country": "Croatia",
+    "description": "Dubrovnik is a historic city, known for its landmarks, museums, and festivals. Visitors can explore the Dubrovnik Cathedral, the Sponza Palace, and the Rector's Palace. The city also has a variety of shops, restaurants, and cafes, offering traditional Croatian cuisine and culture. The city is also known for its scenic coastline and beaches."
   },
   {
-    "name": "Split",
+    "name": "Plitvice Lakes National Park",
     "coordinates": {
-      "latitude": 43.5081,
-      "longitude": 16.4402
+      "latitude": 44.8805,
+      "longitude": 15.6160
     },
-    "country": "Croatia"
+    "country": "Croatia",
+    "description": "Plitvice Lakes National Park is a UNESCO World Heritage Site, known for its lakes, waterfalls, and forests. Visitors can explore the trails, boardwalks, and boat rides, and admire the natural beauty of the park. The park also has a variety of wildlife, including bears, wolves, and deer."
+  },
+  {
+    "name": "Krka National Park",
+    "coordinates": {
+      "latitude": 43.8171,
+      "longitude": 15.9720
+    },
+    "country": "Croatia",
+    "description": "Krka National Park is known for its waterfalls, lakes, and rivers. Visitors can explore the trails, swim in the pools, and admire the natural beauty of the park. The park also has a variety of wildlife, including birds, fish, and reptiles."
+  },
+  {
+    "name": "Pula Arena",
+    "coordinates": {
+      "latitude": 44.8683,
+      "longitude": 13.8487
+    },
+    "country": "Croatia",
+    "description": "Pula Arena is a Roman amphitheater, built in the 1st century AD. Visitors can explore the arena, learn about the history of Roman gladiators and games, and attend concerts and events. The arena is one of the best-preserved Roman amphitheaters in the world."
   },
   {
     "name": "Zadar",
@@ -149,134 +185,61 @@
       "latitude": 44.1194,
       "longitude": 15.2422
     },
-    "country": "Croatia"
+    "country": "Croatia",
+    "description": "Zadar is a historic city, known for its landmarks, museums, and beaches. Visitors can explore the Zadar Cathedral, the Sea Organ, and the Roman Forum. The city also has a variety of shops, restaurants, and cafes, offering traditional Croatian cuisine and culture."
   },
   {
-    "name": "Rovinj",
+    "name": "Split",
     "coordinates": {
-      "latitude": 45.0805,
-      "longitude": 13.6405
+      "latitude": 43.5081,
+      "longitude": 16.4402
     },
-    "country": "Croatia"
+    "country": "Croatia",
+    "description": "Split is a historic city, known for its landmarks, museums, and beaches. Visitors can explore the Diocletian's Palace, the Cathedral of Saint Domnius, and the Peristyle. The city also has a variety of shops, restaurants, and cafes, offering traditional Croatian cuisine and culture."
   },
   {
-    "name": "Budva",
+    "name": "Budapest",
     "coordinates": {
-      "latitude": 42.2884,
-      "longitude": 18.8428
+      "latitude": 47.4979,
+      "longitude": 19.0402
     },
-    "country": "Montenegro"
+    "country": "Hungary",
+    "description": "Budapest is the capital city of Hungary, known for its architecture, museums, and thermal baths. Visitors can explore the Buda Castle, the Hungarian Parliament Building, and the Széchenyi Thermal Bath. The city also has a variety of shops, restaurants, and cafes, offering traditional Hungarian cuisine and culture."
   },
   {
-    "name": "Kotor",
+    "name": "Lake Balaton",
     "coordinates": {
-      "latitude": 42.4247,
-      "longitude": 18.7712
+      "latitude": 46.8258,
+      "longitude": 17.7344
     },
-    "country": "Montenegro"
+    "country": "Hungary",
+    "description": "Lake Balaton is the largest lake in Central Europe, known for its beaches, resorts, and vineyards. Visitors can swim, sail, and fish in the lake, and explore the surrounding hills and villages. The lake also has a variety of restaurants and cafes, offering traditional Hungarian cuisine and wine."
   },
   {
-    "name": "Podgorica",
+    "name": "Eger Castle",
     "coordinates": {
-      "latitude": 42.4304,
-      "longitude": 19.2594
+      "latitude": 47.9029,
+      "longitude": 20.3777
     },
-    "country": "Montenegro"
+    "country": "Hungary",
+    "description": "Eger Castle is a medieval fortress, known for its history, architecture, and museums. Visitors can explore the castle, learn about the Ottoman wars and the wine culture of the region, and admire the panoramic views of the city. The castle also has a variety of shops, restaurants, and cafes, offering traditional Hungarian cuisine and culture."
   },
   {
-    "name": "Ulcinj",
+    "name": "Debrecen",
     "coordinates": {
-      "latitude": 41.9317,
-      "longitude": 19.2245
+      "latitude": 47.5316,
+      "longitude": 21.6273
     },
-    "country": "Montenegro"
+    "country": "Hungary",
+    "description": "Debrecen is a cultural and economic center, known for its museums, parks, and festivals. Visitors can explore the Great Reformed Church, the Déri Museum, and the Nagyerdő Park. The city also has a variety of bars, cafes, and restaurants, offering traditional Hungarian cuisine and culture."
   },
   {
-    "name": "Herceg Novi",
+    "name": "Szeged",
     "coordinates": {
-      "latitude": 42.4531,
-      "longitude": 18.5272
+      "latitude": 46.2530,
+      "longitude": 20.1482
     },
-    "country": "Montenegro"
-  },
-  {
-    "name": "Hagia Sophia",
-    "coordinates": {
-      "latitude": 41.0086,
-      "longitude": 28.9802
-    },
-    "country": "Turkey"
-  },
-  {
-    "name": "Topkapi Palace",
-    "coordinates": {
-      "latitude": 41.0119,
-      "longitude": 28.9833
-    },
-    "country": "Turkey"
-  },
-  {
-    "name": "Blue Mosque",
-    "coordinates": {
-      "latitude": 41.0054,
-      "longitude": 28.9764
-    },
-    "country": "Turkey"
-  },
-  {
-    "name": "Grand Bazaar",
-    "coordinates": {
-      "latitude": 41.0107,
-      "longitude": 28.9685
-    },
-    "country": "Turkey"
-  },
-  {
-    "name": "Basilica Cistern",
-    "coordinates": {
-      "latitude": 41.0084,
-      "longitude": 28.9774
-    },
-    "country": "Turkey"
-  },
-  {
-    "name": "Spice Bazaar",
-    "coordinates": {
-      "latitude": 41.0178,
-      "longitude": 28.9647
-    },
-    "country": "Turkey"
-  },
-  {
-    "name": "Galata Tower",
-    "coordinates": {
-      "latitude": 41.0256,
-      "longitude": 28.9742
-    },
-    "country": "Turkey"
-  },
-  {
-    "name": "Dolmabahce Palace",
-    "coordinates": {
-      "latitude": 41.0392,
-      "longitude": 29.0029
-    },
-    "country": "Turkey"
-  },
-  {
-    "name": "Taksim Square",
-    "coordinates": {
-      "latitude": 41.0368,
-      "longitude": 28.9868
-    },
-    "country": "Turkey"
-  },
-  {
-    "name": "Chora Church",
-    "coordinates": {
-      "latitude": 41.0222,
-      "longitude": 28.9428
-    },
-    "country": "Turkey"
+    "country": "Hungary",
+    "description": "Szeged is a cultural and economic center, known for its Art Nouveau architecture, museums, and festivals. Visitors can explore the Votive Church, the Reök Palace, and the Anna Spring. The city also has a variety of bars, cafes, and restaurants, offering traditional Hungarian and Serbian cuisine."
   }
 ]

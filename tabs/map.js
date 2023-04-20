@@ -1,8 +1,8 @@
 import React, { useState, useEffect, useRef } from 'react';
-import { StyleSheet, Text, View, TouchableOpacity, ScrollView } from 'react-native'; 
-import MapView, { Marker } from 'react-native-maps';
+import { StyleSheet, Text, View, TouchableOpacity, ScrollView } from 'react-native';
+import MapView, { Marker, Circle } from 'react-native-maps';
 import * as Location from 'expo-location';
-import places from './places.json'; 
+import places from './places.json';
 
 export default function Map() {
   const [location, setLocation] = useState(null);
@@ -50,16 +50,37 @@ export default function Map() {
         latitudeDelta: 0.0082,
         longitudeDelta: 0.0081,
       }, 1000); // move the map to center on the selected marker's location
+      setSelectedPlace(place.name); // set the selected place name in state
+      setTimeout(() => setSelectedPlace(null), 30000); // delay clearing the selected place state for a long time
     }
   };
 
   const handleSwitchCountry = (country) => {
     setSelectedCountry(country);
+    if (country !== 'all') {
+      const countryPlaces = places.filter(place => place.country.toLowerCase() === country);
+      if (countryPlaces.length > 0) {
+        const countryCoords = countryPlaces[0].coordinates;
+        mapRef.current.animateToRegion({
+          latitude: countryCoords.latitude,
+          longitude: countryCoords.longitude,
+          latitudeDelta: 4,
+          longitudeDelta: 4,
+        }, 1000); // move the map to center on the selected country's location
+      }
+    } else {
+      mapRef.current.animateToRegion({
+        latitude: location.coords.latitude,
+        longitude: location.coords.longitude,
+        latitudeDelta: 0.0592,
+        longitudeDelta: 0.0591,
+      }, 1000); // move the map back to the initial location
+    }
   };
 
   return (
     <View style={styles.container}>
-      <ScrollView horizontal={true}> 
+      <ScrollView horizontal={true}>
         <View style={styles.switchContainer}>
           {countries.map((country) => (
             <TouchableOpacity
@@ -79,7 +100,7 @@ export default function Map() {
       </ScrollView>
       {location && (
         <MapView
-          ref={mapRef} 
+          ref={mapRef}
           style={styles.map}
           initialRegion={{
             latitude: location.coords.latitude,
@@ -87,11 +108,22 @@ export default function Map() {
             latitudeDelta: 0.0922,
             longitudeDelta: 0.0421,
           }}
-          onRegionChange={() => setSelectedPlace(null)} 
+          onRegionChange={() => setSelectedPlace(null)}
         >
+          {/* Add circle for user's current location */}
+          <Circle
+            center={{
+              latitude: location.coords.latitude,
+              longitude: location.coords.longitude,
+            }}
+            radius={100}
+            fillColor="rgba(0, 0, 255, 0.1)"
+            strokeColor="blue"
+            strokeWidth={2}
+          />
           {places
             .filter((place) => selectedCountry === 'all' || place.country.toLowerCase() === selectedCountry)
-            .map((place, index) => ( 
+            .map((place, index) => (
               <Marker
                 key={index}
                 coordinate={{ latitude: place.coordinates.latitude, longitude: place.coordinates.longitude }}
@@ -100,12 +132,11 @@ export default function Map() {
               >
                 {selectedPlace === place.name && (
                   <View style={styles.markerContainer}>
-                    <Text style={styles.markerText}>{place.name}</Text>
+                    <Text style={styles.markerText}>{place.name + "\nDescription: " + place.description}</Text>
                   </View>
                 )}
               </Marker>
             ))}
-          <Marker coordinate={{ latitude: location.coords.latitude, longitude: location.coords.longitude }} />
         </MapView>
       )}
     </View>
@@ -123,7 +154,7 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     backgroundColor: '#fff',
     borderBottomWidth: 1,
-    borderBottomColor: '#ccc',
+    borderBottomColor: 'black',
     paddingVertical: 10,
   },
   switchButton: {
@@ -142,71 +173,19 @@ const styles = StyleSheet.create({
     color: '#fff',
   },
   map: {
-    width : '100%',
-    height : '92.5%',
+    width: '100%',
+    height: '92.5%',
   },
   markerContainer: {
-    backgroundColor: '#fff',
-    borderRadius: 5,
-    paddingVertical: 5,
-    paddingHorizontal: 10,
+    backgroundColor: 'linear-gradient(to bottom, #ffffff, #f2f2f2)',
+    borderRadius: 10,
+    paddingVertical: 10,
+    paddingHorizontal: 20,
     borderColor: '#ccc',
     borderWidth: 1,
+    boxShadow: '0px 2px 4px rgba(0, 0, 0, 0.1)',
   },
   markerText: {
     fontSize: 16,
-  },
-  // no ussage
-  inputContainer: {
-    paddingHorizontal: 20,
-    paddingTop: 10,
-    backgroundColor: '#fff',
-    borderBottomWidth: 1,
-    borderBottomColor: '#ccc',
-  },
-  //  no ussage
-  textInput: {
-    height: 40,
-    borderBottomColor: '#ccc',
-    borderBottomWidth: 1,
-    marginBottom: 10,
-  },
-  //  no ussage
-  radioInputs: {
-    flexDirection: 'column',
-    alignItems: 'flex-start',
-    marginVertical: 10,
-  },
-  radio: {
-    flexDirection: 'row',
-    alignItems: 'center',
-    marginVertical: 5,
-  },
-  radioInput: {
-    flexDirection: 'row',
-    alignItems: 'center',
-  },
-  //  no ussage
-  radioCircle: {
-    width: 20,
-    height: 20,
-    borderRadius: 10,
-    borderWidth: 2,
-    borderColor: '#bbb',
-    justifyContent: 'center',
-    alignItems: 'center',
-    marginRight: 10,
-  },
-  //  no ussage
-  selectedRadioCircle: {
-    width: 10,
-    height: 10,
-    borderRadius: 5,
-    backgroundColor: '#bbb',
-  },
-  //  also no ussage
-  radioText: {
-    fontSize: 16,
-    color: '#333',
   },
 });
