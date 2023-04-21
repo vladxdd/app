@@ -1,22 +1,17 @@
 import React, { useState, useEffect, useRef } from 'react';
-import { StyleSheet, Text, View, TouchableOpacity, ScrollView, Linking } from 'react-native';
-import MapView, { Marker, Circle } from 'react-native-maps';
+import { StyleSheet, Text, View, TouchableOpacity, ScrollView } from 'react-native';
+import MapView, { Marker } from 'react-native-maps';
 import * as Location from 'expo-location';
 import places from './places.json';
-import { MaterialIcons } from '@expo/vector-icons';
 
 export default function Map() {
   const [location, setLocation] = useState(null);
-  const [errorMsg, setErrorMsg] = useState(null);
+  const [setErrorMsg] = useState(null);
   const [selectedPlace, setSelectedPlace] = useState(null);
   const mapRef = useRef(null);
   const [selectedCountry, setSelectedCountry] = useState('all');
-  const countries = Array.from(new Set(places.map((place) => place.country.toLowerCase())));
-  const [searchText, setSearchText] = useState("");
+  const countries = [...new Set(places.map((place) => place.country.toLowerCase()))];
   const [cameraView, setCameraView] = useState(false);
-  const handleTextChange = (text) => {
-    setSearchText(text);
-  };
 
   useEffect(() => {
     (async () => {
@@ -30,27 +25,6 @@ export default function Map() {
       setLocation(location);
     })();
   }, []);
-
-  const handlePersonPress = () => {
-    setCameraView(!cameraView);
-  };
-
-  const handlePersonDragEnd = async (e) => {
-    const { latitude, longitude } = e.nativeEvent.coordinate;
-    const url = `https://www.google.com/maps/@${latitude},${longitude},3a,75y,39.74t/data=!3m4!1e1!3m2!1sAF1QipOAn_DvMCLsiQ3KCO3D8WfyaCkIjKxEhmpC31ir!2e10`;
-    await Linking.openURL(url);
-  };
-
-  const handleSearch = () => {
-    const filteredPlaces = places.filter(place => {
-      const searchTextLC = searchText.toLowerCase();
-      const nameLC = place.name.toLowerCase();
-      const addressLC = place.address.toLowerCase();
-      return nameLC.includes(searchTextLC) || addressLC.includes(searchTextLC);
-    });
-    console.log(filteredPlaces);
-    // do something with the filtered places
-  };
 
   const handleMarkerPress = (place) => {
     if (place.name === selectedPlace) {
@@ -80,7 +54,7 @@ export default function Map() {
           longitudeDelta: 4,
         }, 1000);
       }
-    } 
+    }
   };
 
   return (
@@ -124,9 +98,6 @@ export default function Map() {
           ))}
         </View>
       </ScrollView>
-      <TouchableOpacity style={styles.personButton} onPress={handlePersonPress}>
-        <MaterialIcons name="person-pin-circle" size={40} color="yellow" />
-      </TouchableOpacity>
       {location && (
         <MapView
           ref={mapRef}
@@ -160,9 +131,6 @@ export default function Map() {
       )}
       {cameraView && (
         <View style={styles.cameraView}>
-          <TouchableOpacity style={styles.cameraCloseButton} onPress={handlePersonPress}>
-            <MaterialIcons name="close" size={24} color="black" />
-          </TouchableOpacity>
           <MapView
             style={styles.cameraMap}
             initialRegion={{
@@ -178,7 +146,6 @@ export default function Map() {
                 latitude: location.coords.latitude,
                 longitude: location.coords.longitude,
               }}
-              onDragEnd={handlePersonDragEnd}
             />
           </MapView>
         </View>
@@ -218,12 +185,6 @@ const styles = StyleSheet.create({
   map: {
     width: '100%',
     height: '92.5%',
-  },
-  personButton: {
-    position: 'absolute',
-    bottom: 10,
-    right: 10,
-    zIndex: 1,
   },
   cameraView: {
     position: 'absolute',
