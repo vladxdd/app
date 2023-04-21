@@ -1,17 +1,19 @@
 import React, { useState, useEffect, useRef } from 'react';
-import { StyleSheet, Text, View, TouchableOpacity, ScrollView } from 'react-native';
+import { StyleSheet, Text, View, TouchableOpacity, ScrollView, Linking } from 'react-native';
 import MapView, { Marker, Circle } from 'react-native-maps';
 import * as Location from 'expo-location';
 import places from './places.json';
+import { MaterialIcons } from '@expo/vector-icons';
 
 export default function Map() {
   const [location, setLocation] = useState(null);
   const [errorMsg, setErrorMsg] = useState(null);
-  const [selectedPlace, setSelectedPlace] = useState(null); //state to store the selected place
-  const mapRef = useRef(null); // reference to the map component
-  const [selectedCountry, setSelectedCountry] = useState('all'); //state to store the selected country
-  const countries = Array.from(new Set(places.map((place) => place.country.toLowerCase()))); //get unique list of countries from the places array
+  const [selectedPlace, setSelectedPlace] = useState(null);
+  const mapRef = useRef(null);
+  const [selectedCountry, setSelectedCountry] = useState('all');
+  const countries = Array.from(new Set(places.map((place) => place.country.toLowerCase())));
   const [searchText, setSearchText] = useState("");
+  const [cameraView, setCameraView] = useState(false);
   const handleTextChange = (text) => {
     setSearchText(text);
   };
@@ -29,6 +31,16 @@ export default function Map() {
     })();
   }, []);
 
+  const handlePersonPress = () => {
+    setCameraView(!cameraView);
+  };
+
+  const handlePersonDragEnd = async (e) => {
+    const { latitude, longitude } = e.nativeEvent.coordinate;
+    const url = `https://www.google.com/maps/@${latitude},${longitude},3a,75y,39.74t/data=!3m4!1e1!3m2!1sAF1QipOAn_DvMCLsiQ3KCO3D8WfyaCkIjKxEhmpC31ir!2e10`;
+    await Linking.openURL(url);
+  };
+
   const handleSearch = () => {
     const filteredPlaces = places.filter(place => {
       const searchTextLC = searchText.toLowerCase();
@@ -36,22 +48,22 @@ export default function Map() {
       const addressLC = place.address.toLowerCase();
       return nameLC.includes(searchTextLC) || addressLC.includes(searchTextLC);
     });
-    console.log(filteredPlaces); // log the filtered places to console
-    // your code to do something with the filtered places
+    console.log(filteredPlaces);
+    // do something with the filtered places
   };
 
   const handleMarkerPress = (place) => {
     if (place.name === selectedPlace) {
-      setSelectedPlace(null); // deselect the selected place if the same marker is clicked again
+      setSelectedPlace(null);
     } else {
       mapRef.current.animateToRegion({
         latitude: place.coordinates.latitude,
         longitude: place.coordinates.longitude,
         latitudeDelta: 0.0082,
         longitudeDelta: 0.0081,
-      }, 1000); // move the map to center on the selected marker's location
-      setSelectedPlace(place.name); // set the selected place name in state
-      setTimeout(() => setSelectedPlace(null), 30000); // delay clearing the selected place state for a long time
+      }, 1000);
+      setSelectedPlace(place.name);
+      setTimeout(() => setSelectedPlace(null), 30000);
     }
   };
 
@@ -66,22 +78,31 @@ export default function Map() {
           longitude: countryCoords.longitude,
           latitudeDelta: 4,
           longitudeDelta: 4,
-        }, 1000); // move the map to center on the selected country's location
+        }, 1000);
       }
-    } else {
-      mapRef.current.animateToRegion({
-        latitude: location.coords.latitude,
-        longitude: location.coords.longitude,
-        latitudeDelta: 0.0592,
-        longitudeDelta: 0.0591,
-      }, 1000); // move the map back to the initial location
-    }
+    } 
   };
 
   return (
     <View style={styles.container}>
       <ScrollView horizontal={true}>
         <View style={styles.switchContainer}>
+          <TouchableOpacity
+            style={[
+              styles.switchButton,
+              selectedCountry === 'all' && styles.selectedSwitchButton,
+            ]}
+            onPress={() => handleSwitchCountry('all')}
+          >
+            <Text
+              style={[
+                styles.switchButtonText,
+                selectedCountry === 'all' && styles.selectedSwitchButtonText,
+              ]}
+            >
+              All
+            </Text>
+          </TouchableOpacity>
           {countries.map((country) => (
             <TouchableOpacity
               key={country}
@@ -91,56 +112,78 @@ export default function Map() {
               ]}
               onPress={() => handleSwitchCountry(country)}
             >
-              <Text style={[styles.switchButtonText, selectedCountry === country && styles.selectedSwitchButtonText]}>
+              <Text
+                style={[
+                  styles.switchButtonText,
+                  selectedCountry === country && styles.selectedSwitchButtonText,
+                ]}
+              >
                 {country}
               </Text>
             </TouchableOpacity>
           ))}
         </View>
       </ScrollView>
+      <TouchableOpacity style={styles.personButton} onPress={handlePersonPress}>
+        <MaterialIcons name="person-pin-circle" size={40} color="yellow" />
+      </TouchableOpacity>
       {location && (
         <MapView
           ref={mapRef}
           style={styles.map}
-          initialRegion={{
-            latitude: location.coords.latitude,
-            longitude: location.coords.longitude,
-            latitudeDelta: 0.0922,
-            longitudeDelta: 0.0421,
-          }}
+          showsUserLocation={true}
+          followsUserLocation={true}
           onRegionChange={() => setSelectedPlace(null)}
         >
-          {/* Add circle for user's current location */}
-          <Circle
-            center={{
-              latitude: location.coords.latitude,
-              longitude: location.coords.longitude,
-            }}
-            radius={100}
-            fillColor="rgba(0, 0, 255, 0.1)"
-            strokeColor="blue"
-            strokeWidth={2}
-          />
           {places
-            .filter((place) => selectedCountry === 'all' || place.country.toLowerCase() === selectedCountry)
-            .map((place, index) => (
+            .filter(
+              (place) =>
+                selectedCountry === 'all' ||
+                place.country.toLowerCase() === selectedCountry
+            )
+            .map((place) => (
               <Marker
-                key={index}
-                coordinate={{ latitude: place.coordinates.latitude, longitude: place.coordinates.longitude }}
-                pinColor={place.country === 'moldova' ? 'green' : 'blue'}
+                key={place.name}
+                coordinate={place.coordinates}
                 onPress={() => handleMarkerPress(place)}
               >
                 {selectedPlace === place.name && (
                   <View style={styles.markerContainer}>
-                    <Text style={styles.markerText}>{place.name + "\nDescription: " + place.description}</Text>
+                    <Text style={styles.markerText}>
+                      {place.name} - {place.address}
+                    </Text>
                   </View>
                 )}
               </Marker>
             ))}
         </MapView>
       )}
+      {cameraView && (
+        <View style={styles.cameraView}>
+          <TouchableOpacity style={styles.cameraCloseButton} onPress={handlePersonPress}>
+            <MaterialIcons name="close" size={24} color="black" />
+          </TouchableOpacity>
+          <MapView
+            style={styles.cameraMap}
+            initialRegion={{
+              latitude: location.coords.latitude,
+              longitude: location.coords.longitude,
+              latitudeDelta: 0.0922,
+              longitudeDelta: 0.0421,
+            }}
+          >
+            <Marker
+              draggable
+              coordinate={{
+                latitude: location.coords.latitude,
+                longitude: location.coords.longitude,
+              }}
+              onDragEnd={handlePersonDragEnd}
+            />
+          </MapView>
+        </View>
+      )}
     </View>
-
   );
 }
 
@@ -175,6 +218,30 @@ const styles = StyleSheet.create({
   map: {
     width: '100%',
     height: '92.5%',
+  },
+  personButton: {
+    position: 'absolute',
+    bottom: 10,
+    right: 10,
+    zIndex: 1,
+  },
+  cameraView: {
+    position: 'absolute',
+    bottom: 0,
+    left: 0,
+    width: '100%',
+    height: '100%',
+    backgroundColor: 'white',
+    zIndex: 2,
+    borderTopLeftRadius: 20,
+    borderTopRightRadius: 20,
+    padding: 20,
+  },
+  cameraCloseButton: {
+    alignSelf: 'flex-end',
+  },
+  cameraMap: {
+    flex: 1,
   },
   markerContainer: {
     backgroundColor: 'linear-gradient(to bottom, #ffffff, #f2f2f2)',
